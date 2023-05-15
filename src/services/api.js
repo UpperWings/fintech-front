@@ -1,3 +1,5 @@
+const HOST = "https://fintech-back.fly.dev"
+
 async function request(url, config) {
   const fetchResponse = await fetch(url, config).catch((err) => {
     throw new Error(err);
@@ -13,7 +15,7 @@ async function request(url, config) {
 }
 
 export const addOutput = async (mensage, value) => {
-  const host = 'http://10.255.30.82:7020';
+  const host = HOST;
   const path = '/output';
   const url = host + path;
   const config = {
@@ -32,7 +34,7 @@ export const addOutput = async (mensage, value) => {
 };
 
 export const getAll = async () => {
-  const host = 'http://10.255.30.82:7020';
+  const host = HOST;
   const path = '/output';
   const url = host + path;
   const fetchResponse = await request(url);
@@ -41,7 +43,7 @@ export const getAll = async () => {
 };
 
 export const deleteOutPut = async (id) => {
-  const host = 'http://10.255.30.82:7020';
+  const host = HOST;
   const path = 'output';
   const url = `${host}/${path}/${id}`;
   const config = {
@@ -55,7 +57,7 @@ export const deleteOutPut = async (id) => {
 };
 
 export const editOutPut = async (id, mensage, value) => {
-  const host = 'http://10.255.30.82:7020';
+  const host = HOST;
   const path = 'output';
   const url = `${host}/${path}/${id}`;
   const config = {
